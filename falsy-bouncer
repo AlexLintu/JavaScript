@@ -1,0 +1,10 @@
+function bouncer(arr) {
+  let result = [];
+  for (let i=0; i < arr.length; i++) {
+    let bool = Boolean(arr[i]);
+    if (bool === true) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
