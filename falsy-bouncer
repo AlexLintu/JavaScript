@@ -8,3 +8,11 @@ function bouncer(arr) {
   }
   return result;
 }
+
+// Second way
+function bouncer(arr) {
+  return arr.filter(Boolean);
+}
+
+// test 
+bouncer([7, "ate", "", false, 9]);
