@@ -1,1 +1,1 @@
-# code-snippets
+# js-challanges
