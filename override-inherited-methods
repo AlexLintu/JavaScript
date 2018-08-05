@@ -3,9 +3,12 @@ function Bird() { }
 Bird.prototype.fly = function() { return "I am flying!"; };
 
 function Penguin() { }
+
+// Inherit all methods from Bird - ChildObject.prototype = Object.create(ParentObject.prototype);
 Penguin.prototype = Object.create(Bird.prototype);
 Penguin.prototype.constructor = Penguin;
 
+// Penguin.fly() overrides Bird.fly()
 Penguin.prototype.fly = function() {
     return "Alas, this is a flightless bird.";
 };
