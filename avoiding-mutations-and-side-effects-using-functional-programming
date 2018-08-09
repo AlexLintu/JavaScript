@@ -1,7 +1,7 @@
 // the global variable
 var fixedValue = 4;
 
-function incrementer () {
+function incrementer (fixedValue) {
   return fixedValue + 1;
 }
 
