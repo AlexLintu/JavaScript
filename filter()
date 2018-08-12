@@ -112,7 +112,26 @@ var watchList = [
                 }
 ];
 
-
+// Arrow function solution
 var filteredList = watchList.filter((element) => Number(element.imdbRating) >=8).map((element) => ({title: element.Title, rating: element.imdbRating}));
 
 console.log(filteredList); 
+
+// Regular function solution
+function findRatedTitles(arr) {
+  filteredList = arr.filter(function(element) {
+    let rating = Number(element.imdbRating);
+    if (rating >= 8) {
+      return rating;
+    }
+  }).map(function(element) {
+    let title = element.Title;
+    rating = element.imdbRating;
+    let obj = {title, rating};
+    return obj;
+  });
+  return filteredList;
+}
+
+findRatedTitles(watchList);
+console.log(filteredList);
