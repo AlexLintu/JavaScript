@@ -7,4 +7,4 @@ var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);
 
 // test
-console.log(nonMutatingSplice(inputCities));
+console.log(nonMutatingSplice(inputCities)); // Returns ["Chicago", "Delhi", "Islamabad"]
