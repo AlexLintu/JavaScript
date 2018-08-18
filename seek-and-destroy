@@ -11,3 +11,6 @@ function destroyer(arr) {
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // Returns [1, 1]
+
+// Arguments doc: https://forum.freecodecamp.org/t/javascript-arguments/14283
+// Boolean doc: https://forum.freecodecamp.org/t/javascript-boolean/14311
