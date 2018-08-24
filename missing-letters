@@ -10,3 +10,5 @@ function fearNotLetter(str) {
 }
 
 console.log(fearNotLetter("abce")); // Returns "d"
+
+// Method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
