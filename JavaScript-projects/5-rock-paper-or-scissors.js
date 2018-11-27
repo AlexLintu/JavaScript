@@ -56,9 +56,9 @@ const determineWinner = (userChoice, computerChoice) => {
 
 function playGame() {
   const userChoice = getUserChoice('paper');
-  console.log(userChoice);
+  console.log(`You chose: ${userChoice}.`);
   const computerChoice = getComputerChoice();
-  console.log(computerChoice);
+  console.log(`Computer chose: ${computerChoice}.`);
   console.log(determineWinner(userChoice, computerChoice));
 }
 
