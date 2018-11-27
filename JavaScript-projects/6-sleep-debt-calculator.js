@@ -44,7 +44,7 @@ const calculateSleepDebt = () => {
   const idealSleepHours = getIdealSleepHours(8);
 
   if (actualSleepHours === idealSleepHours) {
-    console.log(`You've got perfect amount of sleep: ${actualSleepHours} hours!`);
+    console.log(`You've got the perfect amount of sleep: ${actualSleepHours} hours!`);
   } else if (actualSleepHours > idealSleepHours) {
     const hoursOver = actualSleepHours - idealSleepHours;
     console.log(`You've got more sleep than needed! You are ${hoursOver} hours over this week!`);
