@@ -8,7 +8,7 @@ const getUserChoice = userInput => {
 };
 
 const getComputerChoice = () => {
-  let randomNum = Math.floor(Math.random() * 3);
+  const randomNum = Math.floor(Math.random() * 3);
   if (randomNum === 0) {
     return 'rock';
   } else if (randomNum === 1) {
@@ -55,9 +55,9 @@ const determineWinner = (userChoice, computerChoice) => {
 }
 
 function playGame() {
-  let userChoice = getUserChoice('paper');
+  const userChoice = getUserChoice('paper');
   console.log(userChoice);
-  let computerChoice = getComputerChoice();
+  const computerChoice = getComputerChoice();
   console.log(computerChoice);
   console.log(determineWinner(userChoice, computerChoice));
 }
