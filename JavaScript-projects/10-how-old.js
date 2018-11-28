@@ -3,8 +3,7 @@ const howOld = (age, year) => {
   const newAge = age + yearDiff;
   const birthYear = 2018 - age;
   const yearsBefore = birthYear - year;
-  
-  
+
   if (year > 2018) {
     return `You will be ${newAge} in the year ${year}`;
   } else if (year < birthYear) {
