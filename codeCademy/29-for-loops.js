@@ -14,3 +14,17 @@ const vacationSpots = ['Bali', 'Paris', 'Tulum'];
 for (let i = 0; i < vacationSpots.length; i++) {
   console.log('I would love to visit ' + vacationSpots[i]); // I would love to visit Bali I would love to visit Paris I would love to visit Tulum
 }
+
+// Nested loops:
+const bobsFollowers = ['Alex', 'Simon', 'Tim', 'Joe'];
+const tinasFollowers = ['Alex', 'Joe', 'Tom'];
+const mutualFollowers = [];
+
+for (let i = 0; i < bobsFollowers.length; i++) {
+  for (let j = 0; j < tinasFollowers.length; j++) {
+    if (bobsFollowers[i] === tinasFollowers[j]) {
+      mutualFollowers.push(bobsFollowers[i]);
+    }
+  }
+}
+console.log(mutualFollowers); // [ 'Alex', 'Joe' ]
