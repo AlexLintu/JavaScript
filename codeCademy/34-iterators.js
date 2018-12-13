@@ -17,4 +17,3 @@ const onlyNumbers = things.filter(thing => {
   return typeof thing === 'number';
 });
 console.log(onlyNumbers); // [ 5, 3.14, 100 ]
-
