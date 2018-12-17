@@ -1,3 +1,4 @@
+// Dot notation examples:
 let spaceship = {
   homePlanet: 'Earth',
   color: 'silver',
@@ -8,3 +9,17 @@ let spaceship = {
 
 const crewCount = spaceship.numCrew; // 5
 const planetArray = spaceship.flightPath; // ['Venus', 'Mars', 'Saturn']
+
+// Bracket notation examples: 
+let spaceship = {
+  'Fuel Type': 'Turbo Fuel',
+  'Active Mission': true,
+  homePlanet: 'Earth',
+  numCrew: 5
+};
+
+let propName = 'Active Mission';
+console.log(spaceship[propName]); // true
+
+let isActive = spaceship['Active Mission'];
+console.log(isActive); // true
