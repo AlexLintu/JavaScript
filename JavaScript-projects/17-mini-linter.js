@@ -7,17 +7,6 @@ let unnecessaryWords = ['extremely', 'literally', 'actually'];
 const storyWords = story.split(' ');
 console.log(storyWords.length); // 188
 
-// Filtering out `unnecessaryWords` out of `story` with for loops:
-let betterWords = [];
-for (i = 0; i < storyWords.length; i++) {
-  for (j = 0; j < unnecessaryWords.length; j++) {
-  }
-  if (storyWords[i] !== unnecessaryWords[j]) {
-    betterWords.push(storyWords[i]);
-  }
-}
+// If the word is not included in the `unnecessaryWords` array we want to include it in the `betterWords` array:
+let betterWords = storyWords.filter(word => !unnecessaryWords.includes(word))
 console.log(betterWords);
-
-let betterWords = storyWords.filter(function (word) {
-  !unnecessaryWords.includes(word)
-})
