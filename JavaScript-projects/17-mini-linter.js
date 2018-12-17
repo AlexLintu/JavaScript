@@ -5,7 +5,7 @@ let overusedWords = ['really', 'very', 'basically'];
 let unnecessaryWords = ['extremely', 'literally', 'actually'];
 
 const storyWords = story.split(' ');
-console.log(storyWords.length); // 188
+console.log('The number of words in the story: ' + storyWords.length); // 188
 
 // If the word is not included in the `unnecessaryWords` array we want to include it in the `betterWords` array:
 const betterWords = storyWords.filter(word => !unnecessaryWords.includes(word));
@@ -13,7 +13,7 @@ const betterWords = storyWords.filter(word => !unnecessaryWords.includes(word));
 
 // Counting how many times overused words were used in the `story`:
 const numOfOverusedWords = storyWords.filter(word => overusedWords.includes(word)).length;
-console.log(numOfOverusedWords);
+console.log('The number of overused words: ' + numOfOverusedWords);
 
 // Counting every verused word:
 let reallyCount = 0;
@@ -35,3 +35,12 @@ console.log('very count: ' + veryCount);
 console.log('basically count: ' + basicallyCount);
 
 // Counting the number of sentences in the `story`:
+let sentenceCounter = 0;
+
+for (word of storyWords) {
+  if (word[word.length - 1] === '.' || word[word.length - 1 === '!']) {
+    sentenceCounter += 1;
+  }
+}
+
+console.log('The number of sentences in the story: ' + sentenceCounter);
