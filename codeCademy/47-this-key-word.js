@@ -7,3 +7,16 @@ const robot = {
 };
 
 console.log(robot.provideInfo()); // I am 1E78V2 and my current energy level is 100.
+
+// Arrow functions:
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet: () => { // `this` value is equal to the global object, which doesn't have dietType property:
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); // Prints undefined
