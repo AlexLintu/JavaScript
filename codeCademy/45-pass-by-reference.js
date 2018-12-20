@@ -3,11 +3,11 @@ let spaceship = {
   homePlanet: 'Earth'
 };
 
-const greenEnergy = (obj) => {
+const greenEnergy = obj => {
   obj['Fuel Type'] = 'avocado oil';
 }
 
-const remotelyDisable = (obj) => {
+const remotelyDisable = obj => {
   obj.disabled = true;
 }
 
