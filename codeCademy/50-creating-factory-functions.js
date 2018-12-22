@@ -30,5 +30,5 @@ const robotFactory = (model, mobile) => {
 }
 
 const tinCan = robotFactory('P-500', true);
-tinCan.beep();
-console.log(tinCan);
+tinCan.beep(); // Beep Boop
+console.log(tinCan); // { model: 'P-500', mobile: true, beep: [Function: beep] }
