@@ -54,5 +54,5 @@ menu.addDishToCourse('desserts', 'Cake', 60);
 menu.addDishToCourse('desserts', 'Pie', 70);
 menu.addDishToCourse('desserts', 'Cookies', 80);
 
-const meal = menu.generateRandomMeal;
+const meal = menu.generateRandomMeal();
 console.log(meal);
