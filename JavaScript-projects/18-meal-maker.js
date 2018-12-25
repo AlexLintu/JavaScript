@@ -1,8 +1,23 @@
 const menu = {
   _courses: {
-    appetizers: [],
-    mains: [],
-    desserts: []
+    _appetizers: [],
+    _mains: [],
+    _desserts: []
+  },
+  get appetizers() {
+    return this._appetizers;
+  },
+  set appetizers(appetizersIn) {
+  },
+  get mains() {
+    return this._mains;
+  },
+  set mains(mainsIn) {
+  },
+  get desserts() {
+    return this._desserts;
+  },
+  set desserts(dessertsIn) {
   },
   get courses() {
     return {
@@ -10,18 +25,6 @@ const menu = {
       mains: this._courses.mains,
       desserts: this._courses.desserts
     }
-  },
-  get getAppetizers() {
-  },
-  set setAppetizers(appetizersIn) {
-  },
-  get getMain() {
-  },
-  set setMain(mainsIn) {
-  },
-  get getDesserts() {
-  },
-  set setDesserts(dessertsIn) {
   },
   addDishToCourse(courseName, dishName, dishPrice) {
     const dish = {
