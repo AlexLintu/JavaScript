@@ -38,5 +38,19 @@ const team = {
   },
   get games() {
     return this._games;
+  },
+  addPlayer(firstName, lastName, age) {
+    let player = {
+      firstName,
+      lastName,
+      age
+    }
+    this.players.push(player);
   }
 }
+
+team.addPlayer('Steph', 'Curry', 28);
+team.addPlayer('Lisa', 'Leslie', 44);
+team.addPlayer('Bugs', 'Bunny', 76);
+
+console.log(team.players);
