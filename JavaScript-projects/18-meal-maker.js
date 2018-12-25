@@ -7,31 +7,25 @@ const menu = {
   get appetizers() {
     return this._appetizers;
   },
-  set appetizers(appetizersIn) {
-  },
   get mains() {
     return this._mains;
-  },
-  set mains(mainsIn) {
   },
   get desserts() {
     return this._desserts;
   },
-  set desserts(dessertsIn) {
-  },
   get courses() {
     return {
-      appetizers: this._courses.appetizers,
-      mains: this._courses.mains,
-      desserts: this._courses.desserts
+      appetizers,
+      mains,
+      desserts
     }
   },
   addDishToCourse(courseName, dishName, dishPrice) {
-    const dish = {
+    let dish = {
       name: this.dishName,
       price: this.dishPrice
-    };
-    this._courses[courseName].push(dish);
+    }
+    this.courses[courseName].push(dish);
   },
   getRandomDishFromCourse(courseName) {
     const dishes = this._courses[courseName];
@@ -57,5 +51,7 @@ menu.addDishToCourse('desserts', 'Cake', 60);
 menu.addDishToCourse('desserts', 'Pie', 70);
 menu.addDishToCourse('desserts', 'Cookies', 80);
 
-const meal = menu.generateRandomMeal();
-console.log(meal);
+console.log(menu._courses);
+
+// const meal = menu.generateRandomMeal();
+// console.log(meal);
