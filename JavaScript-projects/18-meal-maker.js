@@ -5,20 +5,16 @@ const menu = {
     _desserts: []
   },
   get appetizers() {
-    return this._appetizers;
+    return this._courses._appetizers;
   },
   get mains() {
-    return this._mains;
+    return this._courses._mains;
   },
   get desserts() {
-    return this._desserts;
+    return this._courses._desserts;
   },
   get courses() {
-    return {
-      appetizers,
-      mains,
-      desserts
-    }
+    return this._courses;
   },
   addDishToCourse(courseName, dishName, dishPrice) {
     let dish = {
