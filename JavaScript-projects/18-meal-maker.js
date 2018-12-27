@@ -37,5 +37,22 @@ menu.addDishToCourse('desserts', 'Cookies', 80);
 
 console.log(menu.courses);
 
+/*
+{ appetizers: 
+   [ { name: 'Salad', price: 5 },
+     { name: 'Soup', price: 10 },
+     { name: 'Chips', price: 20 } ],
+  mains: 
+   [ { name: 'Stake', price: 30 },
+     { name: 'Pasta', price: 40 },
+     { name: 'Sushi', price: 50 } ],
+  desserts: 
+   [ { name: 'Cake', price: 60 },
+     { name: 'Pie', price: 70 },
+     { name: 'Cookies', price: 80 } ] }
+*/
+
 const meal = menu.generateRandomMeal();
 console.log(meal);
+
+// Your meal is Soup, Stake, Cake and the total cost is 100
