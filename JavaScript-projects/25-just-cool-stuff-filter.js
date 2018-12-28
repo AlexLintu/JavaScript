@@ -12,8 +12,19 @@ const justCoolStuff = (arr1, arr2) => {
 }
 
 // Using .filter() method:
-const justCoolStuff = (arr1, arr2) => {
+const justCoolStuff = (arr1, arr2) => arr1.filter(word => arr2.includes(word));
 
+// Using .filter() method and for loop:
+function justCoolStuff(arr1, arr2) {
+  function isInSecondArray(word) {
+    for (let i = 0; i < arr2.length; i++) {
+      if (arr2[i] === word) {
+        return true;
+      }
+    }
+    return false;
+  }
+  return arr1.filter(isInSecondArray)
 }
 
 const coolStuff = ['gameboys', 'skateboards', 'backwards hats', 'fruit-by-the-foot', 'pogs', 'my room', 'temporary tattoos'];
