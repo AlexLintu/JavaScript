@@ -44,7 +44,16 @@ const _ = {
       invertedObj[originalValue] = key;
     }
     return invertedObj;
-  }
+  },
+  findKey(object, func) {
+    for (let key in object) {
+      if (func(object[key])) {
+        return key;
+      }
+    }
+    return undefined;
+  },
+
 }
 
 // .clamp() tests:
@@ -67,7 +76,10 @@ console.log(_.pad('Hello', 2));
 console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'name')); // true
 console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'hobby')); // false
 // .invert() test:
-console.log(_.invert({ 'name': 'Alex', 'city': 'Vancouver' }));
+console.log(_.invert({ 'name': 'Alex', 'city': 'Vancouver' })); // { Alex: 'name', Vancouver: 'city' }
+// .findKey() tests:
+console.log(_.findKey({ 'name': 'Alex', favNumber: 5 }, num => num >= 5)); // favNumber
+console.log(_.findKey({ 'name': 'Alex', favNumber: 5 }, num => num < 5)); // undefined
 
 // Do not write or modify code below this line.
 module.exports = _;
