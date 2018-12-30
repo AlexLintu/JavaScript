@@ -16,6 +16,10 @@ const _ = {
     }
     let isInRange = number > start && number < end;
     return isInRange;
+  },
+  words(str) {
+    let arrOfWords = str.split(' ');
+    return arrOfWords;
   }
 }
 
@@ -29,6 +33,8 @@ console.log(_.inRange(1, 2, 4)); // false
 console.log(_.inRange(5, 2, 4)); // false
 console.log(_.inRange(7, 2)); // false
 console.log(_.inRange(3, 5, 2)); // true
+//.words() tests:
+console.log(_.words('Hello there!')); // [ 'Hello', 'there!' ]
 
 // Do not write or modify code below this line.
 module.exports = _;
