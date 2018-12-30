@@ -36,6 +36,14 @@ const _ = {
   has(object, key) {
     let hasValue = object[key] !== undefined;
     return hasValue;
+  },
+  invert(object) {
+    let invertedObj = {};
+    for (let key in object) {
+      let originalValue = object[key];
+      invertedObj[originalValue] = key;
+    }
+    return invertedObj;
   }
 }
 
@@ -49,15 +57,17 @@ console.log(_.inRange(1, 2, 4)); // false
 console.log(_.inRange(5, 2, 4)); // false
 console.log(_.inRange(7, 2)); // false
 console.log(_.inRange(3, 5, 2)); // true
-// .words() tests:
+// .words() test:
 console.log(_.words('Hello there!')); // [ 'Hello', 'there!' ]
 // .pad() tests:
 console.log(_.pad('Hello', 10));
 console.log(_.pad('Hello', 7));
 console.log(_.pad('Hello', 2));
 // .has() tests:
-console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'name'));
-console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'hobby'));
+console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'name')); // true
+console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'hobby')); // false
+// .invert() test:
+console.log(_.invert({ 'name': 'Alex', 'city': 'Vancouver' }));
 
 // Do not write or modify code below this line.
 module.exports = _;
