@@ -1,4 +1,5 @@
 const _ = {
+  // Number methods:
   clamp(number, lower, upper) {
     let lowerClampedValue = Math.max(number, lower);
     let clampedValue = Math.min(lowerClampedValue, upper);
@@ -17,6 +18,7 @@ const _ = {
     let isInRange = number > start && number < end;
     return isInRange;
   },
+  // String methods:
   words(string) {
     let arrOfWords = string.split(' ');
     return arrOfWords;
@@ -29,6 +31,11 @@ const _ = {
     let paddingEnd = targetLength - string.length - paddingStart;
     let paddedString = ' '.repeat(paddingStart) + string + ' '.repeat(paddingEnd);
     return paddedString;
+  },
+  // Object methods:
+  has(object, key) {
+    let hasValue = object[key] !== undefined;
+    return hasValue;
   }
 }
 
@@ -48,6 +55,9 @@ console.log(_.words('Hello there!')); // [ 'Hello', 'there!' ]
 console.log(_.pad('Hello', 10));
 console.log(_.pad('Hello', 7));
 console.log(_.pad('Hello', 2));
+// .has() tests:
+console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'name'));
+console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'hobby'));
 
 // Do not write or modify code below this line.
 module.exports = _;
