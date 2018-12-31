@@ -61,12 +61,21 @@ const _ = {
     let droppedArr = array.slice(dropNum);
     return droppedArr;
   },
-  dropWhile(array, func) {
+  dropWhile(array, func) { // https://lodash.com/docs/4.17.11#dropWhile
     let dropNumber = array.findIndex((element, index) => !func(element, index, array));
     let droppedArray = this.drop(array, dropNumber);
     return droppedArray;
   },
-
+  chunk(array, size) { // https://lodash.com/docs/4.17.11#chunk
+    if (!size) {
+      size = 1;
+    }
+    let newArr = [];
+    for (let i = 0; i < array.length; i += size) {
+      newArr.push(array.slice(i, i + size));
+    }
+    return newArr;
+  }
 }
 
 // NUMBER METHODS:
@@ -103,8 +112,12 @@ console.log(_.findKey({ 'name': 'Alex', favNumber: 5 }, num => num < 5)); // und
 // .drop() method tests:
 console.log(_.drop(['a', 'b', 'c', 'd', 'e', 'f'], 3)); // [ 'd', 'e', 'f' ]
 console.log(_.drop(['a', 'b', 'c', 'd', 'e', 'f'])); // [ 'b', 'c', 'd', 'e', 'f' ]
-// .dropWhile() method tests:
+// .dropWhile() method test:
 console.log(_.dropWhile([2, 4, 6, 7, 8, 10], num => num % 2 === 0)); // [ 7, 8, 10 ]
+// .chunk() method tests:
+console.log(_.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)); // [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ], [ 10 ] ]
+console.log(_.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6)); // [ [ 1, 2, 3, 4, 5, 6 ], [ 7, 8, 9, 10 ] ]
+console.log(_.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); // [ [ 1 ], [ 2 ], [ 3 ], [ 4 ], [ 5 ], [ 6 ], [ 7 ], [ 8 ], [ 9 ], [ 10 ] ]
 
 // Do not write or modify code below this line.
 module.exports = _;
