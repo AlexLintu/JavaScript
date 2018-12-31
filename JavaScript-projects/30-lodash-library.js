@@ -60,7 +60,13 @@ const _ = {
     }
     let droppedArr = array.slice(dropNum);
     return droppedArr;
-  }
+  },
+  dropWhile(array, func) {
+    let dropNumber = array.findIndex((element, index) => !func(element, index, array));
+    let droppedArray = this.drop(array, dropNumber);
+    return droppedArray;
+  },
+
 }
 
 // NUMBER METHODS:
@@ -97,6 +103,8 @@ console.log(_.findKey({ 'name': 'Alex', favNumber: 5 }, num => num < 5)); // und
 // .drop() method tests:
 console.log(_.drop(['a', 'b', 'c', 'd', 'e', 'f'], 3)); // [ 'd', 'e', 'f' ]
 console.log(_.drop(['a', 'b', 'c', 'd', 'e', 'f'])); // [ 'b', 'c', 'd', 'e', 'f' ]
+// .dropWhile() method tests:
+console.log(_.dropWhile([2, 4, 6, 7, 8, 10], num => num % 2 === 0)); // [ 7, 8, 10 ]
 
 // Do not write or modify code below this line.
 module.exports = _;
