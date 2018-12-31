@@ -53,9 +53,17 @@ const _ = {
     }
     return undefined;
   },
-
+  // Array methods:
+  drop(array, dropNum) {
+    if (!dropNum) {
+      dropNum = 1;
+    }
+    let droppedArr = array.slice(dropNum);
+    return droppedArr;
+  }
 }
 
+// NUMBER METHODS:
 // .clamp() tests:
 console.log(_.clamp(3, 2, 4)); // 3
 console.log(_.clamp(1, 2, 4)); // 2
@@ -66,12 +74,16 @@ console.log(_.inRange(1, 2, 4)); // false
 console.log(_.inRange(5, 2, 4)); // false
 console.log(_.inRange(7, 2)); // false
 console.log(_.inRange(3, 5, 2)); // true
+
+// STRING METHODS:
 // .words() test:
 console.log(_.words('Hello there!')); // [ 'Hello', 'there!' ]
 // .pad() tests:
 console.log(_.pad('Hello', 10));
 console.log(_.pad('Hello', 7));
 console.log(_.pad('Hello', 2));
+
+// OBJECT METHODS:
 // .has() tests:
 console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'name')); // true
 console.log(_.has({ name: 'Alex', city: 'Vancouver' }, 'hobby')); // false
@@ -80,6 +92,11 @@ console.log(_.invert({ 'name': 'Alex', 'city': 'Vancouver' })); // { Alex: 'name
 // .findKey() tests:
 console.log(_.findKey({ 'name': 'Alex', favNumber: 5 }, num => num >= 5)); // favNumber
 console.log(_.findKey({ 'name': 'Alex', favNumber: 5 }, num => num < 5)); // undefined
+
+// ARRAY METHODS
+// .drop() method tests:
+console.log(_.drop(['a', 'b', 'c', 'd', 'e', 'f'], 3)); // [ 'd', 'e', 'f' ]
+console.log(_.drop(['a', 'b', 'c', 'd', 'e', 'f'])); // [ 'b', 'c', 'd', 'e', 'f' ]
 
 // Do not write or modify code below this line.
 module.exports = _;
