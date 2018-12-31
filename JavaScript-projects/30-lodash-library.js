@@ -118,6 +118,3 @@ console.log(_.dropWhile([2, 4, 6, 7, 8, 10], num => num % 2 === 0)); // [ 7, 8, 
 console.log(_.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)); // [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ], [ 10 ] ]
 console.log(_.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6)); // [ [ 1, 2, 3, 4, 5, 6 ], [ 7, 8, 9, 10 ] ]
 console.log(_.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); // [ [ 1 ], [ 2 ], [ 3 ], [ 4 ], [ 5 ], [ 6 ], [ 7 ], [ 8 ], [ 9 ], [ 10 ] ]
-
-// Do not write or modify code below this line.
-module.exports = _;
