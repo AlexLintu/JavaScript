@@ -21,6 +21,8 @@ body {
   font-size: 18px;
 }
 
+.instructions-row {}
+
 .door-row {
   text-align: center;
 }
