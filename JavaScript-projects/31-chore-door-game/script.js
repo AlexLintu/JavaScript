@@ -1,17 +1,14 @@
-// Logic for clicking on the doors and seeing images:
+// Getting access to the images in the HTML and specifying images that should be shown on click event:
 const doorImage1 = document.getElementById('door1');
 let botDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/robot.svg';
-doorImage1.onclick = () => { doorImage1.src = botDoorPath };
 
 const doorImage2 = document.getElementById('door2');
 const beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg';
-doorImage2.onclick = () => { doorImage2.src = beachDoorPath };
 
 const doorImage3 = document.getElementById('door3');
 const spaceDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg';
-doorImage3.onclick = () => { doorImage3.src = spaceDoorPath };
 
-// Logic for randomizing the game:
+// Randomizing logic of images shown when each door is open:
 const numClosedDoors = 3;
 let openDoor1;
 let openDoor2;
@@ -35,4 +32,8 @@ const randomChoreDoorGenerator = () => {
   }
 }
 
+doorImage1.onclick = () => { doorImage1.src = openDoor1 };
+doorImage2.onclick = () => { doorImage2.src = openDoor2 };
+doorImage3.onclick = () => { doorImage3.src = openDoor3 };
 
+randomChoreDoorGenerator();
