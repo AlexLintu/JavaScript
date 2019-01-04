@@ -34,6 +34,14 @@ const randomChoreDoorGenerator = () => {
 
 let closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg';
 
+const isBot = (door) => {
+  if (door.src === botDoorPath) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const isClicked = (door) => {
   if (door.src === closedDoorPath) {
     return false;
@@ -42,43 +50,64 @@ const isClicked = (door) => {
   }
 }
 
-const playDoor = () => {
+const playDoor = (door) => {
   numClosedDoors--;
   if (numClosedDoors === 0) {
     gameOver('win');
+  } else if (isBot(door)) {
+    gameOver();
   }
 }
 
 doorImage1.onclick = () => {
-  if (!isClicked(doorImage1)) {
+  if (!isClicked(doorImage1) && currentlyPlaying) {
     doorImage1.src = openDoor1;
-    playDoor();
+    playDoor(door1);
   }
 };
 
 
 doorImage2.onclick = () => {
-  if (!isClicked(doorImage2)) {
+  if (!isClicked(doorImage2) && currentlyPlaying) {
     doorImage2.src = openDoor2;
-    playDoor();
+    playDoor(door2);
   }
 };
 
 doorImage3.onclick = () => {
-  if (!isClicked(doorImage3)) {
+  if (!isClicked(doorImage3) && currentlyPlaying) {
     doorImage3.src = openDoor3;
+    playDoor(door3);
   }
-  playDoor();
 };
 
-
 let startButton = document.getElementById('start');
+
+startButton.onclick = () => {
+  if (currentlyPlaying === false) {
+    startRound();
+  }
+}
+
+const startRound = () => {
+  numClosedDoors = 3;
+  doorImage1.src = closedDoorPath;
+  doorImage2.src = closedDoorPath;
+  doorImage3.src = closedDoorPath;
+  startButton.innerHTML = 'Good luck!';
+  currentlyPlaying = true;
+  randomChoreDoorGenerator();
+}
+
+let currentlyPlaying = true;
 
 const gameOver = (status) => {
   if (status === 'win') {
     startButton.innerHTML = 'You win! Play again?';
+  } else {
+    startButton.innerHTML = 'Game over! Play again?';
   }
+  currentlyPlaying = false;
 }
 
-randomChoreDoorGenerator();
-
+startRound();
