@@ -1,20 +1,29 @@
-// The keys and notes variables store the piano keys
+// The keys and notes variables store the piano keys:
+// keys variable stores an array of ids that match the keys:
 const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
+// notes variable stores an array of elements that match the keys:
 const notes = [];
 keys.forEach(function (key) {
   notes.push(document.getElementById(key));
 })
-
-// Write named functions that change the color of the keys below
+// About target property: https://www.w3schools.com/jsref/event_target.asp and https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+// Functions that change color of the key elements:
 const keyPlay = (event) => {
   event.target.style.backgroundColor = 'blue';
 }
 
-// Write a named function with event handler properties
-
-
+const keyReturn = (event) => {
+  event.target.style.backgroundColor = '';
+}
+// Function that assigns events to the keys:
+const assignEvents = (note) => {
+  note.onmousedown = keyPlay;
+  note.onmouseup = keyReturn;
+}
 // Write a loop that runs the array elements through the function
-
+notes.forEach(note => {
+  assignEvents(note);
+})
 
 // These variables store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById('first-next-line');
