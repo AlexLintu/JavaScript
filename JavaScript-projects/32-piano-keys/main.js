@@ -3,6 +3,7 @@
 const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
 // notes variable stores an array of elements that match the keys:
 const notes = [];
+console.log(notes);
 keys.forEach(function (key) {
   notes.push(document.getElementById(key));
 })
@@ -20,10 +21,10 @@ const assignEvents = (note) => {
   note.onmousedown = keyPlay;
   note.onmouseup = keyReturn;
 }
-// Write a loop that runs the array elements through the function
-notes.forEach(note => {
+// A loop that runs the array elements through the assignment function:
+notes.forEach((note) => {
   assignEvents(note);
-})
+});
 
 // These variables store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById('first-next-line');
@@ -40,13 +41,31 @@ nextThree.hidden = true;
 startOver.hidden = true;
 
 // Write anonymous event handler property and function for the first progress button
-
+nextOne.onclick = () => {
+  nextTwo.hidden = false;
+  nextOne.hidden = true;
+  document.getElementById('letter-note-five').innerHTML = 'D';
+  document.getElementById('letter-note-six').innerHTML = 'C';
+}
 
 // Write anonymous event handler property and function for the second progress button
-
+nextTwo.onclick = () => {
+  nextThree.hidden = false;
+  nextTwo.hidden = true;
+  document.getElementById('word-five').innerHTML = 'DEAR';
+  document.getElementById('word-six').innerHTML = 'FRI-';
+  lastLyric.style.display = 'inline-block';
+  document.getElementById('letter-note-three').innerHTML = 'G';
+  document.getElementById('letter-note-four').innerHTML = 'E';
+  document.getElementById('letter-note-five').innerHTML = 'C';
+  document.getElementById('letter-note-six').innerHTML = 'B';
+}
 
 // Write anonymous event handler property and function for the third progress button
-
+nextThree.onclick = () => {
+  startOver.hidden = false;
+  nextThree.hidden = true;
+}
 
 // This is the event handler property and function for the startOver button
 startOver.onclick = function () {
