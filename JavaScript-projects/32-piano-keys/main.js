@@ -35,12 +35,12 @@ let startOver = document.getElementById('fourth-next-line');
 // This variable stores the '-END' lyric element
 let lastLyric = document.getElementById('column-optional');
 
-// These statements are "hiding" all the progress buttons, but the first one
+// These statements are "hiding" all the progress buttons, but the first one:
 nextTwo.hidden = true;
 nextThree.hidden = true;
 startOver.hidden = true;
 
-// Write anonymous event handler property and function for the first progress button
+// This is the event handler property and function for the nextOne button:
 nextOne.onclick = () => {
   nextTwo.hidden = false;
   nextOne.hidden = true;
@@ -48,7 +48,7 @@ nextOne.onclick = () => {
   document.getElementById('letter-note-six').innerHTML = 'C';
 }
 
-// Write anonymous event handler property and function for the second progress button
+// This is the event handler property and function for the nextTwo button:
 nextTwo.onclick = () => {
   nextThree.hidden = false;
   nextTwo.hidden = true;
@@ -61,13 +61,26 @@ nextTwo.onclick = () => {
   document.getElementById('letter-note-six').innerHTML = 'B';
 }
 
-// Write anonymous event handler property and function for the third progress button
+// This is the event handler property and function for the nextThree button:
 nextThree.onclick = () => {
   startOver.hidden = false;
   nextThree.hidden = true;
+  document.getElementById('word-one').innerHTML = 'HAP-';
+  document.getElementById('letter-note-one').innerHTML = 'F';
+  document.getElementById('word-two').innerHTML = 'PY';
+  document.getElementById('letter-note-two').innerHTML = 'F';
+  document.getElementById('word-three').innerHTML = 'BIRTH-';
+  document.getElementById('letter-note-three').innerHTML = 'E';
+  document.getElementById('word-four').innerHTML = 'DAY';
+  document.getElementById('letter-note-four').innerHTML = 'C';
+  document.getElementById('word-five').innerHTML = 'TO';
+  document.getElementById('letter-note-five').innerHTML = 'D';
+  document.getElementById('word-six').innerHTML = 'YOU!';
+  document.getElementById('letter-note-six').innerHTML = 'C';
+  lastLyric.style.display = 'none';
 }
 
-// This is the event handler property and function for the startOver button
+// This is the event handler property and function for the startOver button:
 startOver.onclick = function () {
   nextOne.hidden = false;
   startOver.hidden = true;
