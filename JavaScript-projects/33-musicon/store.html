@@ -8,6 +8,19 @@
   <title>Musicon</title>
   <link rel="stylesheet" href="style.css">
   <script src="handlebars.min.js"></script>
+  <script id="templateHB" type="text/x-handlebars-template">
+    {{#each instruments}}
+    <article class="instrument">
+        <img class="image" src={{this.image}} alt={{this.name}}>
+        <section class="details">
+          <h2 class="name">{{this.name}}</h2>
+          <p class="description">{{this.description}}</p>
+          <p class="price"><del>{{this.price}}</del></p>
+          <p class="sale">{{this.sale}}</p>
+        </section>
+      </article>
+      {{/each}}
+  </script>
 </head>
 
 <body>
@@ -28,17 +41,6 @@
 
   <article id="showcase">
     <section class="container">
-      <article class="instrument">
-        <img class="image" src="https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/electronic-keyboard.png"
-          alt="Electronic Keyboard">
-        <section class="details">
-          <h2 class="name">Electronic Keyboard</h2>
-          <p class="description">A piano welcomed to the 21th century. Pianists celebrate the compact form factor and
-            the diversity of synthesized rhythms all in one masterful musical machine.</p>
-          <p class="price"><del>Price: $1,999.00</del></p>
-          <p class="sale">On Sale! $1,699.89</p>
-        </section>
-      </article>
 
       <article class="instrument">
         <img class="image" src="https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/electric-guitar.png"
