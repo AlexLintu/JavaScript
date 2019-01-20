@@ -14,8 +14,7 @@
         <img class="image" src={{this.image}} alt={{this.name}}>
         <section class="details">
           <h2 class="name">{{this.name}}</h2>
-          <p class="description">{{this.description}}</p>
-       
+          <p class="description">{{this.description}}</p> 
           {{#if this.sale}}
           <p class="price"><del>{{this.price}}</del></p>
           <p class="sale">{{this.sale}}</p>
@@ -36,9 +35,15 @@
 
       <nav>
         <ul class="navbar">
-          <li><a href="index.html">Home</a></li>
-          <li class="current"><a href="store.html">Store</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li class="current">
+            <a href="store.html">Store</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
         </ul>
       </nav>
 
