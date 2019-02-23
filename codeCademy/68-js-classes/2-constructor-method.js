@@ -4,3 +4,7 @@ class Surgeon {
     this.department = department;
   }
 }
+
+const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+
+const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
