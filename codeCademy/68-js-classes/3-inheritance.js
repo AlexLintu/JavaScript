@@ -14,6 +14,19 @@ class HospitalEmployee {
   }
 
   takeVacationDays(daysOff) {
-    this._remainingVacationDays = this._remainingVacationDays - daysOff;
+    this._remainingVacationDays -= daysOff;
   }
 }
+
+// Creating a Nurse sub-class:
+class Nurse extends HospitalEmployee {
+  // Unique to this sub-class properties:
+  constructor(name, certifications) {
+    // Properties that are the same with the parent super class:
+    super(name, remainingVacationDays);
+    this._certifications = certifications;
+  }
+}
+
+// Creating an instance of Nurse:
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
