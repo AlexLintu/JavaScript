@@ -23,12 +23,24 @@ class Nurse extends HospitalEmployee {
   // Unique to this sub-class properties:
   constructor(name, certifications) {
     // Properties that are the same with the parent super class:
-    super(name, remainingVacationDays);
+    super(name);
     this._certifications = certifications;
+  }
+
+  get certifications() {
+    return this._certifications;
+  }
+
+  addCertification(newCertification) {
+    this._certifications.push(newCertification);
   }
 }
 
 // Creating an instance of Nurse:
 const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
 nurseOlynyk.takeVacationDays(5);
-console.log(nurseOlynyk.remainingVacationDays);
+console.log(nurseOlynyk.remainingVacationDays); // 15
+
+// Adding new certificate:
+nurseOlynyk.addCertification('Genetics');
+console.log(nurseOlynyk.certifications); // [ 'Trauma', 'Pediatrics', 'Genetics' ]
