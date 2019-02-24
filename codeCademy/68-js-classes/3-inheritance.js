@@ -32,7 +32,7 @@ class Nurse extends HospitalEmployee {
   }
 
   addCertification(newCertification) {
-    this._certifications.push(newCertification);
+    this.certifications.push(newCertification);
   }
 }
 
