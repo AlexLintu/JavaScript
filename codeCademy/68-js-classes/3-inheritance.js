@@ -30,3 +30,5 @@ class Nurse extends HospitalEmployee {
 
 // Creating an instance of Nurse:
 const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
+nurseOlynyk.takeVacationDays(5);
+console.log(nurseOlynyk.remainingVacationDays);
