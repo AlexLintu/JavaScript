@@ -16,6 +16,12 @@ class HospitalEmployee {
   takeVacationDays(daysOff) {
     this._remainingVacationDays -= daysOff;
   }
+
+  // This method won't be available to class instances:
+  static generatePassword() {
+    const randomNumber = Math.floor(Math.random() * 10000);
+    return randomNumber;
+  }
 }
 
 // Creating a Nurse sub-class:
