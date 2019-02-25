@@ -26,12 +26,16 @@ class Media {
 
   }
 
-  toggleCheckOutStatus(isCheckedOut) {
-    if (this._isCheckedOut) {
-      return this._isCheckedOut = false;
-    } else {
-      return this._isCheckedOut = true;
-    }
+  // toggleCheckOutStatus() {
+  //   if (this._isCheckedOut) {
+  //     return this._isCheckedOut = false;
+  //   } else {
+  //     return this._isCheckedOut = true;
+  //   }
+  // }
+
+  toggleCheckOutStatus() {
+    this._isCheckedOut = !this._isCheckedOut;
   }
 
   addRating() {
