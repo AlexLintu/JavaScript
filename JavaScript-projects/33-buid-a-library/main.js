@@ -22,10 +22,6 @@ class Media {
     return this._ratings;
   }
 
-  getAverageRating(rating) {
-
-  }
-
   // toggleCheckOutStatus() {
   //   if (this._isCheckedOut) {
   //     return this._isCheckedOut = false;
@@ -35,11 +31,16 @@ class Media {
   // }
 
   toggleCheckOutStatus() {
-    this._isCheckedOut = !this._isCheckedOut;
+    return this._isCheckedOut = !this._isCheckedOut;
   }
 
-  addRating() {
+  getAverageRating() {
+    const result = (this._ratings.reduce((currentSum, rating) => currentSum + rating, 0)) / this._ratings.length;
+    return result;
+  }
 
+  addRating(rating) {
+    this._ratings.push(rating);
   }
 }
 
