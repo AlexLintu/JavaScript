@@ -41,7 +41,7 @@ class Media {
   }
 
   addRating(rating) {
-    this._ratings.push(rating);
+    return this._ratings.push(rating);
   }
 }
 
@@ -49,7 +49,7 @@ class Media {
 class Book extends Media {
   // Arguments that do not have default values:
   constructor(title, author, pages) {
-    super(title);
+    super(title, ratings);
     this._author = author;
     this._pages = pages;
   }
@@ -85,5 +85,9 @@ const historyOfEverything = new Book('A Short History of Nearly Everything', 'Bi
 historyOfEverything.toggleCheckOutStatus();
 console.log(historyOfEverything.isCheckedOut);
 
-historyOfEverything.addRating(4, 5, 5);
-console.log(historyOfEverything.addRating);
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(5);
+
+historyOfEverything.getAverageRating();
+console.log(historyOfEverything.ratings);
