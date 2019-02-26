@@ -1,3 +1,4 @@
+// SUPER CLASS:
 class Media {
   // `title` argument sets the one property that is in all three subclasses of Media, and does not have a default value:
   constructor(title) {
@@ -44,12 +45,13 @@ class Media {
   }
 }
 
+// SUB-CLASSES:
 class Book extends Media {
   // Arguments that do not have default values:
   constructor(title, author, pages) {
     super(title);
     this._author = author;
-    this._pages = 0;
+    this._pages = pages;
   }
 
   get author() {
@@ -60,3 +62,22 @@ class Book extends Media {
     return this._pages;
   }
 }
+
+class Movie extends Media {
+  constructor(title, director, runTime) {
+    super(title);
+    this._director = director;
+    this._runTime = runTime;
+  }
+
+  get director() {
+    return this._director;
+  }
+
+  get runTime() {
+    return this._runTime;
+  }
+}
+
+// INSTANCES:
+const historyOfEverything = new Book('A Short History of Nearly Everything', 'Bill Bryson', 544);
