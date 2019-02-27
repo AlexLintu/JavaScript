@@ -73,6 +73,26 @@ class Movie extends Media {
   }
 }
 
+class CD extends Media {
+  constructor(artist, title, songs) {
+    super(title);
+    this._artist = artist;
+    this._songs = [];
+  }
+
+  get artist() {
+    return this._artist;
+  }
+
+  get songs() {
+    return this._songs;
+  }
+
+  shuffle() {
+
+  }
+}
+
 // -- 3. INSTANCES --:
 const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
 
