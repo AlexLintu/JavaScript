@@ -74,7 +74,7 @@ class Movie extends Media {
 }
 
 class CD extends Media {
-  constructor(artist, title, songs) {
+  constructor(artist, title) {
     super(title);
     this._artist = artist;
     this._songs = [];
@@ -88,8 +88,10 @@ class CD extends Media {
     return this._songs;
   }
 
+  // ?
   shuffle() {
-
+    const randomNumber = Math.floor(Math.random() * (songs.length + 1));
+    return this._songs.push(this._songs[randomNumber]);
   }
 }
 
