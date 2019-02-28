@@ -2,7 +2,9 @@
 class Media {
   // `title` argument sets the one property that is in all three subclasses of Media, and does not have a default value:
   constructor(title) {
+    // `this` is going to be the subclass or instance name:
     this._title = title;
+    // Properties below have starting/default values:
     this._isCheckedOut = false;
     this._ratings = [];
   }
@@ -39,7 +41,7 @@ class Media {
   }
 }
 
-// -- 2. SUB-CLASSES --:
+// -- 2. SUBCLASSES --:
 class Book extends Media {
   // Arguments that do not have default values:
   constructor(author, title, pages) {
