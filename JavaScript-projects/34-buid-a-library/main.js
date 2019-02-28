@@ -95,7 +95,7 @@ class CD extends Media {
     return this._songs;
   }
 
-  // ?
+  // ? Need to work on this:
   shuffle() {
     const randomNumber = Math.floor(Math.random() * (songs.length + 1));
     return this._songs.push(this._songs[randomNumber]);
