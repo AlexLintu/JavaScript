@@ -9,6 +9,7 @@ class Media {
     this._ratings = [];
   }
 
+  // Getters return the value of the property:
   get title() {
     return this._title;
   }
@@ -17,8 +18,9 @@ class Media {
     return this._isCheckedOut;
   }
 
-  set isCheckedOut(newIsCheckedOut) {
-    this._isCheckedOut = newIsCheckedOut;
+  // Setters change the value of the property:
+  set isCheckedOut(value) {
+    this._isCheckedOut = value;
   }
 
   get ratings() {
