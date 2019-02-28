@@ -129,3 +129,5 @@ speed.addRating(5);
 
 // Getting an average rating value:
 console.log(speed.getAverageRating());
+
+// Video project walkthrough: https://www.youtube.com/watch?v=_7HStd1Vhlc&feature=youtu.be
