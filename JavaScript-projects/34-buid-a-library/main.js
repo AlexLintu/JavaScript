@@ -48,6 +48,7 @@ class Media {
 class Book extends Media {
   // Arguments that do not have default values:
   constructor(author, title, pages) {
+    // The parameter that superclass takes into its constructor: 
     super(title);
     this._author = author;
     this._pages = pages;
@@ -64,6 +65,7 @@ class Book extends Media {
 
 class Movie extends Media {
   constructor(director, title, runTime) {
+    // The parameter that superclass takes into its constructor: 
     super(title);
     this._director = director;
     this._runTime = runTime;
