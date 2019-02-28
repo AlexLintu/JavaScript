@@ -102,12 +102,13 @@ class CD extends Media {
   }
 }
 
-// -- 3. INSTANCES --:
+// -- 3. INSTANCES / OBJECTS --:
+// 1) BOOK Instance:
 const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
 
 // Changing checkout status:
 historyOfEverything.toggleCheckOutStatus();
-console.log(historyOfEverything.isCheckedOut);
+console.log(historyOfEverything.isCheckedOut); // true
 
 // Adding ratings:
 historyOfEverything.addRating(4);
@@ -115,15 +116,15 @@ historyOfEverything.addRating(5);
 historyOfEverything.addRating(5);
 
 // Getting an average rating value:
-console.log(historyOfEverything.getAverageRating());
+console.log(historyOfEverything.getAverageRating()); // 4.666666666666667
 
 
-// MOVIE Instance:
+// 2) MOVIE Instance:
 const speed = new Movie('Jan de Bont', 'Speed', 116);
 
 // Changing checkout status:
 speed.toggleCheckOutStatus();
-console.log(speed.isCheckedOut);
+console.log(speed.isCheckedOut); // true
 
 // Adding ratings:
 speed.addRating(1);
@@ -131,6 +132,6 @@ speed.addRating(1);
 speed.addRating(5);
 
 // Getting an average rating value:
-console.log(speed.getAverageRating());
+console.log(speed.getAverageRating()); // 2.3333333333333335
 
 // Video project walkthrough: https://www.youtube.com/watch?v=_7HStd1Vhlc&feature=youtu.be
