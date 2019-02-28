@@ -28,18 +28,19 @@ class Media {
   }
 
   toggleCheckOutStatus() {
-    return this._isCheckedOut = !this._isCheckedOut;
+    // We are using getter and setter here, therefore there are no _:
+    return this.isCheckedOut = !this.isCheckedOut;
   }
 
   getAverageRating() {
-    const ratingsSum = this._ratings.reduce((currentSum, rating) => currentSum + rating, 0);
-    const ratingsLength = this._ratings.length;
+    const ratingsSum = this.ratings.reduce((currentSum, rating) => currentSum + rating, 0);
+    const ratingsLength = this.ratings.length;
     const result = ratingsSum / ratingsLength;
     return result;
   }
 
   addRating(rating) {
-    return this._ratings.push(rating);
+    return this.ratings.push(rating);
   }
 }
 
