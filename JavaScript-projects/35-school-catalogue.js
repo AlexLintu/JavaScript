@@ -27,21 +27,22 @@ class School {
   }
 
   quickFacts() {
-    console.log(`${this.name} educates ${this.numberOfStudents} students at the ${this.numberOfStudents} school level.`);
+    console.log(`${this.name} educates ${this.numberOfStudents} students at the ${this.level} school level.`);
   }
 
   static pickSubstituteTeacher(substituteTeachers) {
-    let substituteTeachers = [];
     let randomIndex = Math.floor(Math.random() * (substituteTeachers.length - 1));
     let substituteTeacher = substituteTeachers[randomIndex];
-    return substituteTeacher;
+    // return substituteTeacher;
+    console.log('Substitute teacher: ' + substituteTeacher);
   }
 }
 
 // -- 2. SUBCLASSES --:
-class Primary extends School {
-  constructor(name, pickupPolicy) {
-    super(name);
+class PrimarySchool extends School {
+  constructor(name, numberOfStudents, pickupPolicy) {
+    // Arguments in super() are the same as the ones in super class constructor:
+    super(name, 'primary', numberOfStudents);
     this._pickupPolicy = pickupPolicy;
   }
 
@@ -50,19 +51,26 @@ class Primary extends School {
   }
 }
 
-class Middle extends School {
-  constructor(name) {
-    super(name);
+class MiddleSchool extends School {
+  constructor(name, numberOfStudents) {
+    super(name, 'middle', numberOfStudents);
   }
 }
 
-class High extends School {
-  constructor(name, sportsTeams) {
-    super(name);
-    this._sportsTeams = [];
+class HighSchool extends School {
+  constructor(name, numberOfStudents, sportsTeams) {
+    super(name, 'high', numberOfStudents);
+    this._sportsTeams = sportsTeams;
   }
 
   get sportsTeams() {
-    return this._sportsTeams;
+    console.log(this._sportsTeams);
   }
 }
+
+// -- 3. INSTANCES / OBJECTS --:
+
+const lorraineHansbury = new PrimarySchool('Lorraine Hansbury', 415, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.');
+lorraineHansbury.quickFacts();
+School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']);
+
