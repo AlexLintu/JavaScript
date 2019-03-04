@@ -1,3 +1,4 @@
+// --SUPER CLASS `School`--
 class School {
   constructor(name, numberOfStudents) {
     this._name = name;
@@ -16,4 +17,17 @@ class School {
   get numberOfStudents() {
     return this._numberOfStudents;
   }
+
+  set numberOfStudents(value) {
+    this._numberOfStudents = value;
+  }
+
+  quickFacts() {
+
+  }
+
+  static pickSubstituteTeacher() {
+
+  }
 }
+
