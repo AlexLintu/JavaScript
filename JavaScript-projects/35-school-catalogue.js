@@ -1,8 +1,8 @@
 // -- 1. SUPER CLASS `School`--:
 class School {
-  constructor(name, numberOfStudents) {
+  constructor(name, level, numberOfStudents) {
     this._name = name;
-    this._level = ['primary', 'middle', 'high'];
+    this._level = level;
     this._numberOfStudents = numberOfStudents;
   }
 
@@ -19,15 +19,22 @@ class School {
   }
 
   set numberOfStudents(value) {
-    this._numberOfStudents = value;
+    if (typeof value === 'Number') {
+      this._numberOfStudents = value;
+    } else {
+      console.log('Invalid input: numberOfStudents must be set to a Number.');
+    }
   }
 
   quickFacts() {
-
+    console.log(`${this.name} educates ${this.numberOfStudents} students at the ${this.numberOfStudents} school level.`);
   }
 
-  static pickSubstituteTeacher() {
-
+  static pickSubstituteTeacher(substituteTeachers) {
+    let substituteTeachers = [];
+    let randomIndex = Math.floor(Math.random() * (substituteTeachers.length - 1));
+    let substituteTeacher = substituteTeachers[randomIndex];
+    return substituteTeacher;
   }
 }
 
