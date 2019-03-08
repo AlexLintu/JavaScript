@@ -24,3 +24,5 @@ function displayFuelCapacity() {
 }
 
 displayFuelCapacity();
+
+test
