@@ -1,3 +1,4 @@
+// 1. ES5 //
 const Airplane = require('./1-airplane.js');
 
 function displayAirplane() {
@@ -6,10 +7,20 @@ function displayAirplane() {
 
 displayAirplane();
 
-// --- //
+// 2. ES5 //
 const Airplane = require('./1-airplane.js');
 
 console.log(Airplane.displayAirplane()); // CloudJet
 
-// - Export Deafault ES6 - //
 
+
+// 3. Export Default ES6 //
+import Airplane from './1-airplane';
+
+function displayFuelCapacity() {
+  Airplane.availableAirplanes.forEach(function (element) {
+    console.log('Fuel Capacity of' + element.name + ':' + element.fuelCapacity);
+  })
+}
+
+displayFuelCapacity();

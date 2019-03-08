@@ -1,10 +1,10 @@
+// 1. ES5 //
 let Airplane = {};
 Airplane.myAirplane = 'StarJet';
 
 module.exports = Airplane;
 
-// --- //
-
+// 2. ES5 //
 let Airplane = {};
 
 module.exports = {
@@ -14,8 +14,7 @@ module.exports = {
   }
 };
 
-// - Export Deafault ES6 (exports one module per file) - //
-
+// 3. Export Default ES6 (exports one module per file) //
 let Airplane = {};
 
 Airplane.availableAirplanes = [
