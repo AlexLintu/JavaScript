@@ -23,6 +23,27 @@ function displayFuelCapacity() {
   })
 }
 
-displayFuelCapacity();
+displayFuelCapacity(); // Fuel Capacity ofAeroJet:800, Fuel Capacity ofSkyJet:500
 
 // 4. Named Exports ES6 //
+import {
+  availableAirplanes,
+  flightRequirements,
+  meetsStaffRequirements
+} from './airplane';
+
+function displayFuelCapacity() {
+  availableAirplanes.forEach(function (element) {
+    console.log('Fuel Capacity of' + element.name + ':' + element.fuelCapacity);
+  })
+}
+
+displayFuelCapacity();
+
+function displayStaffStatus() {
+  availableAirplanes.forEach(function (element) {
+    console.log(element.name + 'meets staff requirements:' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff));
+  });
+}
+
+displayStaffStatus(); // AeroJetmeets staff requirements:true, SkyJetmeets staff requirements:false
