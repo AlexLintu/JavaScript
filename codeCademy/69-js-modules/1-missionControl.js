@@ -25,4 +25,4 @@ function displayFuelCapacity() {
 
 displayFuelCapacity();
 
-test
+// 4. Named Exports ES6 //

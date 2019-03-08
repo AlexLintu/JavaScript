@@ -17,8 +17,7 @@ module.exports = {
 // 3. Export Default ES6 (exports one module per file) //
 let Airplane = {};
 
-Airplane.availableAirplanes = [
-  {
+Airplane.availableAirplanes = [{
     name: 'AeroJet',
     fuelCapacity: 800
   },
@@ -29,3 +28,34 @@ Airplane.availableAirplanes = [
 ];
 
 export default Airplane;
+
+// 4. Named Exports ES6 //
+let availableAirplanes = [{
+    availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+    name: 'AeroJet',
+    fuelCapacity: 800
+  },
+  {
+    availableStaff: ['pilots', 'flightAttendants'],
+    name: 'SkyJet',
+    fuelCapacity: 500
+  }
+];
+
+let flightRequirements = {
+  requiredStaff: 4
+};
+
+function meetsStaffRequirements(availableStaff, requiredStaff) {
+  if (availableStaff.length >= requiredStaff) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export {
+  availableAirplanes,
+  flightRequirements,
+  meetsStaffRequirements
+};
