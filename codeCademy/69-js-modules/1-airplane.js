@@ -18,28 +18,28 @@ module.exports = {
 let Airplane = {};
 
 Airplane.availableAirplanes = [{
-    name: 'AeroJet',
-    fuelCapacity: 800
-  },
-  {
-    name: 'SkyJet',
-    fuelCapacity: 500
-  }
+  name: 'AeroJet',
+  fuelCapacity: 800
+},
+{
+  name: 'SkyJet',
+  fuelCapacity: 500
+}
 ];
 
 export default Airplane;
 
 // 4. Named Exports ES6 //
 let availableAirplanes = [{
-    availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
-    name: 'AeroJet',
-    fuelCapacity: 800
-  },
-  {
-    availableStaff: ['pilots', 'flightAttendants'],
-    name: 'SkyJet',
-    fuelCapacity: 500
-  }
+  availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+  name: 'AeroJet',
+  fuelCapacity: 800
+},
+{
+  availableStaff: ['pilots', 'flightAttendants'],
+  name: 'SkyJet',
+  fuelCapacity: 500
+}
 ];
 
 let flightRequirements = {
@@ -59,3 +59,5 @@ export {
   flightRequirements,
   meetsStaffRequirements
 };
+
+// 5. Export Named Exports ES6 //
