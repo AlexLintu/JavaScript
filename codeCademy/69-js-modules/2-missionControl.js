@@ -1,4 +1,4 @@
-import { aircrafts, flightReqs, meetsStaffReqs, meetsSpeedRangeReqs } from './airplane';
+import { aircrafts, flightReqs, meetsStaffReqs, meetsSpeedRangeReqs } from './2-airplane';
 
 function displayFuelCapacity() {
   aircrafts.forEach(function (element) {
