@@ -1,7 +1,8 @@
-import { aircrafts, flightReqs, meetsStaffReqs, meetsSpeedRangeReqs } from './2-airplane';
+import { availableAirplanes, flightRequirements, meetsStaffRequirements } from './2-airplane';
+import meetsSpeedRangeRequirements from './2-airplane';
 
 function displayFuelCapacity() {
-  aircrafts.forEach(function (element) {
+  availableAirplanes.forEach(function (element) {
     console.log('Fuel Capacity of ' + element['name'] + ': ' + element['fuelCapacity']);
   });
 }
@@ -9,16 +10,16 @@ function displayFuelCapacity() {
 displayFuelCapacity();
 
 function displayStaffStatus() {
-  aircrafts.forEach(function (element) {
-    console.log(element['name'] + ' meets staff requirements: ' + meetsStaffReqs(element['availableStaff'], flightReqs['requiredStaff']));
+  availableAirplanes.forEach(function (element) {
+    console.log(element['name'] + ' meets staff requirements: ' + meetsStaffRequirements(element['availableStaff'], flightRequirements['requiredStaff']));
   });
 }
 
 displayStaffStatus();
 
 function displaySpeedRangeStatus() {
-  aircrafts.forEach(function (element) {
-    console.log(element['name'] + ' meets speed range requirements:' + meetsSpeedRangeReqs(element['maxSpeed'], element['minSpeed'], flightReqs['requiredSpeedRange']));
+  availableAirplanes.forEach(function (element) {
+    console.log(element['name'] + ' meets speed range requirements:' + meetsSpeedRangeRequirements(element['maxSpeed'], element['minSpeed'], flightRequirements['requiredSpeedRange']));
   });
 }
 
