@@ -26,11 +26,7 @@ function displayFuelCapacity() {
 displayFuelCapacity(); // Fuel Capacity ofAeroJet:800, Fuel Capacity ofSkyJet:500
 
 // 4. Named Exports ES6 //
-import {
-  availableAirplanes,
-  flightRequirements,
-  meetsStaffRequirements
-} from './airplane';
+import { availableAirplanes, flightRequirements, meetsStaffRequirements } from './airplane';
 
 function displayFuelCapacity() {
   availableAirplanes.forEach(function (element) {
@@ -47,3 +43,30 @@ function displayStaffStatus() {
 }
 
 displayStaffStatus(); // AeroJetmeets staff requirements:true, SkyJetmeets staff requirements:false
+
+// 5. Export Named Exports ES6 //
+import { availableAirplanes, flightRequirements, meetsStaffRequirements, meetsSpeedRangeRequirements } from './airplane';
+
+function displayFuelCapacity() {
+  availableAirplanes.forEach(function (element) {
+    console.log('Fuel Capacity of' + element.name + ':' + element.fuelCapacity);
+  })
+}
+
+displayFuelCapacity();
+
+function displayStaffStatus() {
+  availableAirplanes.forEach(function (element) {
+    console.log(element.name + 'meets staff requirements: ' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff));
+  });
+}
+
+displayStaffStatus();
+
+function displaySpeedRangeStatus() {
+  availableAirplanes.forEach(function (element) {
+    console.log(element.name + 'meets speed range requirements: ' + meetsSpeedRangeRequirements(element.maxSpeed, element.minSpeed, flightRequirements.requiredSpeedRange));
+  });
+}
+
+displaySpeedRangeStatus();
