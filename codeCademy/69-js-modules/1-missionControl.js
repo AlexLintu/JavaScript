@@ -69,4 +69,4 @@ function displaySpeedRangeStatus() {
   });
 }
 
-displaySpeedRangeStatus();
+displaySpeedRangeStatus(); //AeroJetmeets speed range requirements: true, SkyJetmeets speed range requirements: false
