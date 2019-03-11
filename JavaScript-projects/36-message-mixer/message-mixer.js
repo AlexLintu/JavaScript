@@ -29,7 +29,7 @@ MessageMixer.reverseWord = function (word) {
 MessageMixer.reverseAllWords = function (sentence) {
   let words = sentence.split(" ");
   for (let i = 0; i < words.length; i++) {
-    words[i] = reverseWord(words[i]);
+    words[i] = MessageMixer.reverseWord(words[i]);
   }
   return words.join(" ");
 };
@@ -52,7 +52,9 @@ MessageMixer.encode = function (string) {
     "o": "0"
   };
   for (let key in replacementObject) {
-    string = replaceAllOccurrences(string, key, replacementObject[key]);
+    string = MessageMixer.replaceAllOccurrences(string, key, replacementObject[key]);
   }
   return string;
 };
+
+module.exports = MessageMixer;
