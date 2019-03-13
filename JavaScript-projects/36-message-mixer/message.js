@@ -1,4 +1,5 @@
-const MessageMixer = require('./message-mixer.js');
+import MessageMixer from './message-mixer.js';
+// const MessageMixer = require('./message-mixer.js');
 
 function displayMessage() {
   console.log(MessageMixer.capitalizeFirstCharacterOfWords("What is the color of the sky?"));
