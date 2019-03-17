@@ -1,0 +1,19 @@
+// Returns the string whose first letter is later in the alphabet. If both first letters are equal, returns null.
+function getLaterFirstLetter(string1, string2) {
+  const firstLetter1 = string1.charAt(0);
+  const firstLetter2 = string2.charAt(0);
+
+  if (firstLetter1 === firstLetter2) {
+    return null;
+  } else if (firstLetter1 < firstLetter2) {
+    return string2;
+  } else {
+    return string1;
+  }
+}
+
+console.log("getLaterFirstLetter('avocado', 'blueberry') returns: " + getLaterFirstLetter('avocado', 'blueberry'));
+
+console.log("getLaterFirstLetter('zebra', 'aardvark') returns : " + getLaterFirstLetter('zebra', 'aardvark'));
+
+console.log("getLaterFirstLetter('astro', 'afar') returns: " + getLaterFirstLetter('astro', 'afar'));
