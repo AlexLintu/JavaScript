@@ -16,4 +16,6 @@ const handleFailure = (rejectionReason) => {
 };
 
 // checkInventory(order) is a promise
-checkInventory(order).then(handleSuccess, handleFailure);
+checkInventory(order)
+  .then(handleSuccess)
+  .catch(handleFailure);
