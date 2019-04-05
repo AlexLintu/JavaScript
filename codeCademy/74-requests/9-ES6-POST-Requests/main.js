@@ -19,7 +19,7 @@ const shortenUrl = () => {
       'apikey': apiKey
     },
     body: data
-  })
+  }).then()
 }
 
 // Clear page and call AJAX functions
