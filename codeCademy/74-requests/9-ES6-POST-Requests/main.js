@@ -10,7 +10,9 @@ const responseField = document.querySelector('#responseField');
 // AJAX functions
 const shortenUrl = () => {
   const urlToShorten = inputField.value;
-  const data = JSON.stringify({ destination: urlToShorten });
+  const data = JSON.stringify({
+    destination: urlToShorten
+  });
 
   fetch(url, {
     method: 'POST',
@@ -19,7 +21,15 @@ const shortenUrl = () => {
       'apikey': apiKey
     },
     body: data
-  }).then()
+  }).then((response) => {
+    if (response.ok) {
+      // renderJsonResponse(response);
+      return response.json();
+    }
+    throw new Error('Request failed!');
+  }, (networkError) => {
+    console.log(networkError.message);
+  })
 }
 
 // Clear page and call AJAX functions
