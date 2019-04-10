@@ -20,6 +20,14 @@ const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 const getVenues = async () => {
   const city = $input.val();
   const urlToFetch = url + city + '&limit=10&client_id=' + clientId + '&client_secret=' + clientSecret + '&v=20190408';
+
+  try {
+
+  }
+
+  catch (error) {
+    console.log(error);
+  }
 }
 
 const getForecast = () => {
