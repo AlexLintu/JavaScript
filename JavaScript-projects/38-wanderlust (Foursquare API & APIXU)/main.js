@@ -43,7 +43,8 @@ const getForecast = async () => {
 
     if (response.ok) {
       const jsonResponse = await response.json();
-      console.log(jsonResponse);
+      const days = jsonResponse.forecast.forecastday;
+      return days;
     }
   } catch (error) {
     console.log(error);
