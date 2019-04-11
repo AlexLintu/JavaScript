@@ -19,7 +19,7 @@ const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 // Add AJAX functions here:
 const getVenues = async () => {
   const city = $input.val();
-  const urlToFetch = url + city + '&limit=10&client_id=' + clientId + '&client_secret=' + clientSecret + '&v=20190410';
+  const urlToFetch = url + city + '&limit=10&client_id=' + clientId + '&client_secret=' + clientSecret + '&v=20190411';
 
   try {
     const response = await fetch(urlToFetch);
@@ -55,9 +55,11 @@ const getForecast = async () => {
 // Render functions
 const renderVenues = (venues) => {
   $venueDivs.forEach(($venue, index) => {
-    // Add your code here:
+    const venue = venues[index];
+    const venueIcon = venue.categories[0].icon;
+    const venueImgSrc = venueIcon.prefix + 'bg_64' + venueIcon.suffix;
 
-    let venueContent = '';
+    let venueContent = createVenueHTML(venue.name, venue.location, venueImgSrc);
     $venue.append(venueContent);
   });
   $destination.append(`<h2>${venues[0].location.city}</h2>`);
@@ -78,7 +80,7 @@ const executeSearch = () => {
   $weatherDivs.forEach(day => day.empty());
   $destination.empty();
   $container.css("visibility", "visible");
-  getVenues()
+  getVenues().then(venues => renderVenues(venues));
   getForecast()
   return false;
 }
