@@ -29,14 +29,25 @@ const getVenues = async () => {
       const venues = jsonResponse.response.groups[0].items.map(item => item.venue);
       return venues;
     }
-  }
-
-  catch (error) {
+  } catch (error) {
     console.log(error);
   }
 }
-const getForecast = () => {
 
+
+const getForecast = async () => {
+  const urlToFetch = forecastUrl + apiKey + '&q=' + $input.val() + '&days=5' + '&hours=11';
+
+  try {
+    const response = await fetch(urlToFetch);
+
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 
