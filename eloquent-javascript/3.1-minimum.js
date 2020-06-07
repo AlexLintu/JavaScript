@@ -8,6 +8,9 @@ const min = (num1, num2) => {
   }
 }
 
-console.log(min(10, 10)); // Both numbers are equal!
-console.log(min(0, 10)); // 0
-console.log(min(0, -10)); // -10
+console.log(min(10, 10));
+// → Both numbers are equal!
+console.log(min(0, 10));
+// → 0
+console.log(min(0, -10));
+// → -10
