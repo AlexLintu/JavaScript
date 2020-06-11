@@ -1,4 +1,3 @@
-// Version 1
 const countChar = (str, char) => {
   let charCounter = 0;
   for (let i = 0; i <= str.length - 1; i++) {
