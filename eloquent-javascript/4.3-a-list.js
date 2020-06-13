@@ -39,3 +39,13 @@ let list3 = {
   }
 }
 */
+
+function listToArray(list) {
+  let array = [];
+  for (let node = list; node; node = node.next) {
+    array.push(node.value);
+  }
+  return array;
+}
+
+console.log(listToArray(arrayToList([10, 20, 30])));
