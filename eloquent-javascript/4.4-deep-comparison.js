@@ -3,14 +3,12 @@ const deepEqual = (val1, val2) => {
     return true;
   }
 
-  if (val1 === null || val2 === null) {
+  if (val1 === null || typeof val1 !== 'object'
+    || val2 === null || typeof val2 !== 'object') {
     return false;
   }
 
   if (typeof val1 === 'object' && typeof val2 === 'object') {
-    // let keys1 = Object.keys(val1);
-    // let keys2 = Object.keys(val2);
-
     let propsInVal1 = 0;
     let propsInVal2 = 0;
 
@@ -22,13 +20,33 @@ const deepEqual = (val1, val2) => {
       if (!(prop in val1) || !deepEqual(val1[prop], val2[prop]))
         return false;
     }
+
+    return propsInVal1 === propsInVal2;
   }
 }
 
-let obj = { here: { is: "an" }, object: 2 };
-console.log(deepEqual(obj, obj));
+let obj1 = {
+  here: {
+    is: "an"
+  },
+  object: 2
+};
+
+let obj2 = {
+  here: 1,
+  object: 2
+};
+
+let obj3 = {
+  here: {
+    is: "an"
+  },
+  object: 2
+};
+
+console.log(deepEqual(obj1, obj1));
 // → true
-console.log(deepEqual(obj, { here: 1, object: 2 }));
+console.log(deepEqual(obj1, obj2));
 // → false
-console.log(deepEqual(obj, { here: { is: "an" }, object: 2 }));
+console.log(deepEqual(obj1, obj3));
 // → true
